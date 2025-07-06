@@ -17,14 +17,16 @@ blockquote {
 	position: relative;
 	margin:auto;
 }
-blockquote::before{
-	content:open-quote;
-	color:blueviolet;
-	position:absolute;
-}
+	blockquote::before{
+		content:open-quote;
+		color:blueviolet;
+		position:absolute;
+	}
+
 ul{
 	list-style-type:none;
 }
+
 a{
 	color:gray;
 }
@@ -34,3 +36,31 @@ a{
 	a:hover{
 		font-weight:800;
 	}
+
+table{
+	border:solid 2px;
+	border-collapse:collapse;
+}
+	thead{
+		border:solid 2px black;
+		background-color:#6B5FB5;
+		color:white;
+		border-top-color:black;
+	}
+	th{
+		color:white;
+		border:solid 2px black;
+		border-left:solid 1px white;
+		border-right:solid 1px white;
+		padding:10px 50px;
+	}
+	td{
+		border: solid 1px;
+	}
+	.table-first-header{
+		border-left:solid 2px black;
+	}
+	.table-last-header{
+		border-right:solid 2px black;
+	}
+	
