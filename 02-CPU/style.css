@@ -12,3 +12,9 @@ figure{
 	font-style:italic;
 	font-size:16px;
 }
+blockquote {
+	font-style: italic;
+	position: relative;
+	line-height: 1.5em;
+	margin: 1em 0 1em 40px;
+}
