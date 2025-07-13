@@ -40,6 +40,7 @@ a{
 table{
 	border:solid 2px;
 	border-collapse:collapse;
+	margin: 0 auto;
 }
 	thead{
 		border:solid 2px black;
@@ -57,10 +58,17 @@ table{
 	td{
 		border: solid 1px;
 	}
+	tr:hover{
+		box-shadow:inset 0px 0px 15px 0px grey;
+	}
 	.table-first-header{
 		border-left:solid 2px black;
 	}
 	.table-last-header{
 		border-right:solid 2px black;
+	}
+	table:hover{
+		box-shadow:0px 0px 25px 15px grey;
+		/*box-shadow:horizontal-offset vertiacal-offset blur spread color;*/
 	}
 	
