@@ -7,8 +7,8 @@
     <title>Калькулятор</title>
 </head>
 <body>
-    <div id="main-window">
-        <div id="title-bar">
+	<div id="main-window">
+		<div id="title-bar">
 			<div id="window-icon-and-title">
 				<img src="img/calcXP.ico" />
 				<div>-Калькулятор</div>
@@ -18,9 +18,36 @@
 				<input type="button" />
 				<input type="button" />
 			</div>
-        </div>
-        <!--  -------------------->
-        <div id="client-rect"></div>
-    </div>
+		</div>
+		<!--  -------------------->
+		<div id="client-rect">
+			<div class="buttons">
+				<button class="btn-clear" type="button" onclick="clearDisplay()">C</button>
+				<button type="button" onclick="appendChar('±')">±</button>
+				<button type="button" onclick="appendChar('%')">%</button>
+				<button type="button" onclick="appendChar('/')">÷</button>
+
+				<button type="button" onclick="appendChar('7')">7</button>
+				<button type="button" onclick="appendChar('8')">8</button>
+				<button type="button" onclick="appendChar('9')">9</button>
+				<button type="button" onclick="appendChar('*')">×</button>
+
+				<button type="button" onclick="appendChar('4')">4</button>
+				<button type="button" onclick="appendChar('5')">5</button>
+				<button type="button" onclick="appendChar('6')">6</button>
+				<button type="button" onclick="appendChar('-')">−</button>
+
+				<button type="button" onclick="appendChar('1')">1</button>
+				<button type="button" onclick="appendChar('2')">2</button>
+				<button type="button" onclick="appendChar('3')">3</button>
+				<button type="button" onclick="appendChar('+')">+</button>
+
+				<button class="btn-zero" type="button" onclick="appendChar('0')">0</button>
+				<button type="button" onclick="appendChar('.')">,</button>
+				<button type="button" onclick="calculateResult()">=</button>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>

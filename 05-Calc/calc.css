@@ -36,10 +36,14 @@
 	#window-control-buttons > input[type=button]{
 		width:24px;
 		height:24px;
+		background-color:blue;
 	}
 
 #client-rect {
 	background-color: rgb(235,233,216);
 	width: 400px;
-	height: 268px;
+	height: 368px;
 }
+
+
+
