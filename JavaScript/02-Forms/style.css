@@ -3,16 +3,34 @@
 body {
 	font-family: Roboto Condensed;
 	font-size: 32px;
+	/*transition: background-color 0.3s ease;*/
 }
 
-#header{
-	display:flex;
-	justify-content:space-between;
+	body.light-theme {
+		background-color: #ffffff;
+		color: #000000;
+	}
+
+	body.dark-theme {
+		background-color: #121212;
+		color: #ffffff;
+	}
+
+#header {
+	display: flex;
+	justify-content: space-between;
 }
 
 #switch-background {
 	width: 32px;
 	height: 32px;
 	background-size: cover;
-	/*background-image: url("img/moon.png");*/
+}
+
+	#switch-background.body.dark-theme {
+		filter:invert(1);
+	}
+
+#theme-change-delay{
+
 }
