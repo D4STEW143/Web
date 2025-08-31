@@ -1,9 +1,13 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root{
+	--theme-transition-delay: 0.3s;
+}
+
 body {
 	font-family: Roboto Condensed;
 	font-size: 32px;
-	/*transition: background-color 0.3s ease;*/
+	transition: background-color var(--theme-transition-delay) ease;
 }
 
 	body.light-theme {

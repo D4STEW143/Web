@@ -29,8 +29,17 @@ function ThemeChangeDelay() {
 	let slider = document.getElementById('theme - change - delay - slider');
 	let switchBackground = document.getElementById('switch-background');
 
-	let body = document.querySelector('body');
-	body.style.cssText += `transition: background-color ${slider.value}s ease`;
+	
+
+	//let body = document.querySelector('body');
+	//body.style.cssText += `transition: background-color ${slider.value}s ease`;
 }
 document.addEventListener("mouseup", ThemeChangeDelay);
+
+let slider = document.getElementById('theme-change-delay-slider');
+	slider.addEventListener('input', function () {
+		document.documentElement.style.setProperty('--theme-transition-delay', `${this.value}s`);
+	});
+
+
 
