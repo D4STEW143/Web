@@ -17,17 +17,62 @@
         <!--<img src="img/moon.png">-->
     </div>
     <h1>WebForms</h1>
-    <form action="handler.php" method="post">
-        <label for="base">Основание степени</label>
-        <input type="number" min="0" id="base" onchange="Power()">
-        <br>
-
-        <label for="exponent">Показатель степени</label>
-        <input type="number" id="exponent" onchange="Power()">
-        <br>
-
-        <div id="power"></div>
+    <form action="handler.php" method="post" id="power-form">
+        <h3>Возведение числа в степень</h3>
+        <div class="pair">
+            <label for="base">Основание степени</label>
+            <input type="number" min="0" id="base" onchange="Power()">
+        </div>
+        <div class="pair">
+            <label for="exponent">Показатель степени</label>
+            <input type="number" id="exponent" onchange="Power()">
+        </div>
+        <div class="pair">
+            <div>Степень:</div>
+            <div id="power"></div>
+        </div>
     </form>
+
+    <form action="handler.php" method="post">
+        <h3>Форма регистрации</h3>
+        <div class="pair">
+            <label for="last_name">Фамилия:</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Введите Вашу фамилию" />
+        </div>
+        <div class="pair">
+            <label for="first_name">Имя:</label>
+            <input type="text" name="first_name" id="first_name" placeholder="Введите Ваше имя">
+        </div>
+        <div class="pair">
+            <label for="birth-date">Дата рождения:</label>
+            <input type="date" name="birth-date" id="birth-date">
+        </div>
+
+        <fieldset>
+            <legend>Какие вы знаете языки?</legend>
+            <input type="checkbox" id="ru"><label for="ru">Русский </label> <br>
+            <input type="checkbox" id="en"><label for="en">English </label> <br>
+            <input type="checkbox" id="de"><label for="de">Deutsche</label> <br>
+            <input type="checkbox" id="it"><label for="it">Italian </label> <br>
+            <input type="checkbox" id="sp"><label for="sp">Espaniol</label> <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Выберите форму обучения</legend>
+            <input type="radio" name="learning-form" id="stacionar"/><label for="stacionar">Стационар</label>
+            <input type="radio" name="learning-form" id="semi-stacionar"/><label for="semi-stacionar">Полустационар</label>
+        </fieldset>
+
+        <h4>Выберите специальность</h4>
+        <select>
+            <option disabled selected="selected"> --- Выберите специальность --- </option>
+            <option>РПО</option>
+            <option>Сети</option>
+            <option>Дизайн</option>
+        </select>
+
+    </form>
+
     <script src="functions.js">
 
     </script>
