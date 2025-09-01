@@ -1,40 +1,39 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-
-:root{
-	--theme-transition-delay: 0.3s;
-}
-
-body {
+﻿body {
 	font-family: Roboto Condensed;
 	font-size: 32px;
-	transition: background-color var(--theme-transition-delay) ease;
 }
-
-	body.light-theme {
-		background-color: #ffffff;
-		color: #000000;
-	}
-
-	body.dark-theme {
-		background-color: #121212;
-		color: #ffffff;
-	}
 
 #header {
 	display: flex;
 	justify-content: space-between;
 }
 
+input[type=number] {
+	font-size: 24px;
+}
+
 #switch-background {
 	width: 32px;
 	height: 32px;
 	background-size: cover;
+	/*background-image: url("img/moon.png");*/
 }
 
-	#switch-background.body.dark-theme {
-		filter:invert(1);
+.light {
+	background: #D8D8D8;
+	color: #323232;
+}
+
+	.light #switch-background {
+		background-image: url("img/moon.png");
 	}
 
-#theme-change-delay{
-
+.dark {
+	background: #323232;
+	color: #D8D8D8;
 }
+
+	.dark #switch-background {
+		filter: brightness(0) invert(1);
+		background-image: url("img/sun.png");
+	}
