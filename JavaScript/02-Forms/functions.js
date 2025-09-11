@@ -37,3 +37,12 @@ function UploadPhoto() {
     alert(filename);
     //alert(students_photo.value);
 }
+
+function SetImage() {
+    let filename = document.getElementById("students-photo");
+    let reader = new FileReader();
+    reader.onload = function (e) {
+        document.getElementById("photo").src = e.target.result;
+    }
+    reader.readAsDataURL(filename.files[0]);
+}
