@@ -80,6 +80,7 @@ document.getElementById("btn-start").onclick = function startCountdownTimer() {
 	if (btnStart.value === "Start") {
 		btnStart.value = "Stop";
 		tickCountdown();
+		
 		//document.getElementById("target-date-value").innerHTML = targetDateControl.valueAsDate;
 		//document.getElementById("target-time-value").innerHTML = targetTimeControl.valueAsDate;
 	}
@@ -108,10 +109,42 @@ function tickCountdown() {
 	targetTime.setMonth(targetDate.getMonth());
 	targetTime.setDate(targetDate.getDate());
 
-	
+	let diff = new Date();
+	const timer_time = new Date();
+	diff.setTime((timer_time.getDate() + (targetTime.getTime() - now.getTime()) - (Math.abs(timer_time.getTimezoneOffset()) * 60000)));
+	document.getElementById("seconds-unit").innerHTML = diff.getSeconds();
+	document.getElementById("minutes-unit").innerHTML = diff.getMinutes();
+	document.getElementById("hours-unit").innerHTML = diff.getHours();
+	document.getElementById("days-unit").innerHTML = Math.trunc(DaysFromHours(HoursFromMin(MinutesFromMls(targetTime))) - DaysFromHours(HoursFromMin(MinutesFromMls(now))));
+
+
 
 	//debug target datetime
-	document.getElementById("target-date-value").innerHTML = now;
+	document.getElementById("target-date-value").innerHTML = diff;
 	document.getElementById("target-time-value").innerHTML = targetTime;
+	setTimeout(tickCountdown, 100)
 }
 
+//function SecondsFromMls(date) {
+//	return date.getTime() / 6000;
+//}
+function MinutesFromMls(date) {
+	return date.getTime() / 60000;
+}
+function HoursFromMin(minutes) {
+	return minutes / 60;
+}
+function DaysFromHours(hours) {
+	return hours / 24;
+}
+//}
+//function YearsFromDays(days) {
+//	return days / 365;
+//}
+
+//function Countdown(now, target) {
+//	document.getElementById("seconds-unit").innerHTML = Math.trunc(SecondsFromMls(target) - SecondsFromMls(now));
+//	document.getElementById("minutes-unit").innerHTML = Math.trunc(MinutesFromMls(target) - MinutesFromMls(now));
+//	document.getElementById("hours-unit").innerHTML = Math.trunc(HoursFromMin(Math.trunc(MinutesFromMls(target) - MinutesFromMls(now))));
+//	setTimeout(Countdown, 100);
+//}
