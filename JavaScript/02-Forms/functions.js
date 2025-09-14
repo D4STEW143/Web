@@ -80,7 +80,7 @@ document.getElementById("btn-start").onclick = function startCountdownTimer() {
 	if (btnStart.value === "Start") {
 		btnStart.value = "Stop";
 		tickCountdown();
-		
+
 		//document.getElementById("target-date-value").innerHTML = targetDateControl.valueAsDate;
 		//document.getElementById("target-time-value").innerHTML = targetTimeControl.valueAsDate;
 	}
@@ -109,19 +109,26 @@ function tickCountdown() {
 	targetTime.setMonth(targetDate.getMonth());
 	targetTime.setDate(targetDate.getDate());
 
+	//Таймер
 	let diff = new Date();
 	const timer_time = new Date();
 	diff.setTime((timer_time.getDate() + (targetTime.getTime() - now.getTime()) - (Math.abs(timer_time.getTimezoneOffset()) * 60000)));
-	document.getElementById("seconds-unit").innerHTML = diff.getSeconds();
-	document.getElementById("minutes-unit").innerHTML = diff.getMinutes();
-	document.getElementById("hours-unit").innerHTML = diff.getHours();
 	document.getElementById("days-unit").innerHTML = Math.trunc(DaysFromHours(HoursFromMin(MinutesFromMls(targetTime))) - DaysFromHours(HoursFromMin(MinutesFromMls(now))));
-
-
+	document.getElementById("hours-unit").innerHTML = diff.getHours();
+	document.getElementById("minutes-unit").innerHTML = diff.getMinutes();
+	document.getElementById("seconds-unit").innerHTML = diff.getSeconds();
+	if (document.getElementById("days-unit").textContent === '0' &&
+		document.getElementById("hours-unit").textContent === '0' &&
+		document.getElementById("minutes-unit").textContent === '0' &&
+		document.getElementById("seconds-unit").textContent === '0') {
+		let alarm = new Audio("\\sound\\alarm.mp3");
+		alarm.play();
+		return;
+	}
 
 	//debug target datetime
-	document.getElementById("target-date-value").innerHTML = diff;
-	document.getElementById("target-time-value").innerHTML = targetTime;
+	//document.getElementById("target-date-value").innerHTML = diff;
+	//document.getElementById("target-time-value").innerHTML = targetTime;
 	setTimeout(tickCountdown, 100)
 }
 
