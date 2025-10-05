@@ -1,0 +1,25 @@
+﻿@page "/power"
+@rendermode InteractiveServer //без этой строки биндинг и события не обрабатываются
+
+<h3>Power</h3>
+
+<label for="base">Основание степени</label>
+<input type="number" name="base" @bind="number" @onclick="Calculate"/>
+
+<label for="exponent">Показатель степени</label>
+<input type="number" name="exponent" @bind="exponent" @onclick="Calculate"/>
+
+<label for="power">Степень: </label>
+<span name="power">@power</span>
+
+@code {
+	double number;
+	double exponent;
+	double power;
+
+	void Calculate()
+	{
+		power = Math.Pow(number, exponent);
+	}
+
+}
